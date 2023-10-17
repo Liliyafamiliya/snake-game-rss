@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./assets/snake-red.png">
+    <title>SNAKE GAME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Heebo:wght@300;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="popup-on">
+        <div class="logo">
+            <img src="./assets/snake-red.png" alt="snake-red" class="snake-red">
+            <h1>NAKE-GAME</h1>
+        </div>
+        <!-- POPUP -->
+        <div class="popup">
+            <div class="popup-container">
+                <div class="popup-body">
+                    <!-- ---MENU--- -->
+                    <div class="menu-content-wrapper">
+                        <div class="popup-img"></div>
+                        <div class="your-score display-none"></div>
+                        <button class="btn btn-start">Start</button>
+                        <button class="btn btn-results">Results</button>
+                    </div>
+
+                    <!-- ---RESULTS--- -->
+                    <div class="results-content-wrapper display-none">
+                        <div class="table">
+                            <div class="table-title">Best results:</div>
+                            <div class="table-cells"></div>
+                            <div class="btn-back-to-menu">
+                                <img src="./assets/arrow-back.svg" alt="arrow-back" class="arrow-back">Back to menu
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ------------- -->
+                </div>
+            </div>
+        </div>
+        <!-- ----- -->
+    </header>
+    <main>
+        <div class="canvas-title">
+            <div class="score">
+                <img src="./assets/strawberry-score.svg" alt="strawberry-score" class="strawberry-score">
+                <span class="score-title"></span>
+            </div>
+            <div class="best"><img src="./assets/goblet-best.svg" alt="goblet-best" class="goblet-best">
+                <span class="best-title"></span>
+            </div>
+        </div>
+        <canvas id="gameZone" width="400" height="400"></canvas>
+    </main>
+    <footer>
+        <div class="links-container">
+            <div class="year"><a href="https://rs.school/js-stage0/" target="_blank"><img class="rss"
+                        src="./assets/rss-icon.svg" alt="rss"></a>
+            </div>
+            <div><a href="https://github.com/liliyafamiliya" target="_blank"><img class="github"
+                        src="./assets/github-icon.svg" alt="github"></a>2023</div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.display-none {
+    display: none !important;
+}
+
+/* ========================HEADER, FOOTER======================== */
+header,
+footer {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: end;
+    margin: 5vh auto;
+}
+
+.snake-red {
+    width: 10vh;
+    height: 10vh;
+}
+
+h1 {
+    font-size: 5vh;
+    font-family: 'Great Vibes', cursive;
+    color: #d70000;
+    text-shadow: #920a0a 3px 0px;
+}
+
+footer {
+    bottom: 0;
+}
+
+.links-container {
+    margin: 1vh auto;
+    display: flex;
+    align-items: end;
+    font-size: 2vh;
+}
+
+.rss {
+    width: 10vh;
+    filter: invert(1);
+}
+
+.github {
+    width: 6vh;
+}
+
+/* ========================MAIN======================== */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg,
+            hsl(298deg 100% 95%) 0%,
+            hsl(297deg 100% 90%) 31%,
+            hsl(30deg 100% 83%) 48%,
+            hsl(53deg 71% 77%) 65%,
+            hsl(22deg 86% 71%) 82%,
+            hsl(304deg 74% 33%) 100%);
+}
+
+.canvas-title {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    align-items: end;
+    font-size: 2.5vh;
+    text-shadow: 1px 0 5px hsl(330, 100%, 50%), 0 1px 3px hsl(330, 100%, 50%), -3px 0 1px hsl(330, 100%, 50%), 0 -1px 1px hsl(330, 100%, 50%);
+}
+
+.strawberry-score {
+    width: 40px;
+}
+
+.goblet-best {
+    width: 25px;
+    margin-right: 3px;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 10px double rgba(240, 46, 170, 0.45);
+    border-radius: 10px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+/* ========================POPUP======================== */
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 5;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.popup-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-body {
+    margin: auto;
+    width: calc(300px + 20vw);
+    height: calc(200px + 40vh);
+    position: relative;
+    background-image: linear-gradient(90deg,
+            hsl(111deg 100% 87%) 0%,
+            hsl(108deg 80% 87%) 8%,
+            hsl(104deg 61% 87%) 17%,
+            hsl(97deg 41% 87%) 25%,
+            hsl(79deg 23% 87%) 33%,
+            hsl(20deg 16% 88%) 42%,
+            hsl(330deg 29% 88%) 50%,
+            hsl(316deg 45% 87%) 58%,
+            hsl(310deg 60% 87%) 67%,
+            hsl(306deg 72% 86%) 75%,
+            hsl(304deg 83% 85%) 83%,
+            hsl(302deg 92% 84%) 92%,
+            hsl(300deg 100% 83%) 100%);
+    border-radius: 20px;
+    border: 3px solid #920a0a;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+header.popup-on .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+header.popup-on .popup-body {
+    transform: scale(1);
+}
+
+.menu-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(10px + 3vh);
+    padding-top: 15px;
+    font-size: 30px;
+    text-shadow: 1px 0 5px hsl(330, 100%, 50%), 0 1px 3px hsl(330, 100%, 50%), -3px 0 1px hsl(330, 100%, 50%), 0 -1px 1px hsl(330, 100%, 50%);
+}
+
+.popup-img {
+    background-image: url(./assets/snake-white.png);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(10px 0px 4px #d70000);
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: 0;
+    border-radius: 40px;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px, rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    filter: drop-shadow(10px 4px 4px #d70000);
+    background-color: aliceblue;
+    font-size: 30px;
+    text-shadow: 1px 0 5px hsl(330, 100%, 50%), 0 1px 3px hsl(330, 100%, 50%), -3px 0 1px hsl(330, 100%, 50%), 0 -1px 1px hsl(330, 100%, 50%);
+}
+
+.btn:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px, rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    background-color: #fbffe7;
+}
+
+/* ========================RESULTS======================== */
+.results-content-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 15px auto;
+    font-size: 100%;
+    text-shadow: 1px 0 5px hsl(330, 100%, 50%), 0 1px 3px hsl(330, 100%, 50%), -3px 0 1px hsl(330, 100%, 50%), 0 -1px 1px hsl(330, 100%, 50%);
+}
+
+.table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 100%;
+    padding-bottom: 50px;
+}
+
+.table-title {
+    text-shadow: 1px 0 5px #d70000, 0 1px 3px #d70000, -3px 0 1px #d70000, 0 -1px 1px #d70000;
+    border-bottom: 1px dotted #d70000;
+    font-size: 150%;
+}
+
+.table-cells {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btn-back-to-menu {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 1px 0 5px #d70000, 0 1px 3px #d70000, 0px 0 1px #d70000, 0 1px 5px #d70000;
+    text-shadow: 1px 0 5px #d70000, 0 1px 3px #d70000, -3px 0 1px #d70000, 0 -1px 1px #d70000;
+    border: 1px dotted #d70000;
+    border-radius: 20px;
+    padding-right: .7vw;
+}
+
+.btn-back-to-menu:hover {
+    background-color: #fbffe7;
+}
+
+.arrow-back {
+    width: 3vw;
+}
+
+/* ========================INTERACTIVITY======================== */
+.btn-back-to-menu,
+.btn,
+.year,
+.github {
+    transition: all .5s;
+}
+
+.btn-back-to-menu:hover,
+.btn:hover,
+.year:hover,
+.github:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.btn-back-to-menu:active,
+.btn:active,
+.year:active,
+.github:active {
+    filter: drop-shadow(10px 3px 10px #f9d801);
+}
